@@ -23,5 +23,7 @@
 int	ft_printf(const char *format, ...);
 int	val_int(int nbr);
 int	val_cara(int c);
+int	val_str(char *s);
+int val_unsi_int(unsigned int nbr);
 
 #endif

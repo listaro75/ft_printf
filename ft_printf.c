@@ -16,8 +16,14 @@ int ft_conv_arg(const char *format, va_list args, int i)
 {
     if (format[i] == 'c')
         return (val_cara(va_arg(args, int)));
+    if (format[i] == 's')
+        return (val_str(va_arg(args, char *)));
     if (format[i] == 'd')
         return (val_int(va_arg(args, int)));
+    if (format[i] == 'i')
+        return (val_int(va_arg(args, int)));
+    if (format[i] == 'u')
+        return (val_unsi_int(va_arg(args, unsigned int)));
     return (0);
 }
 

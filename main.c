@@ -16,6 +16,6 @@ int	main(void)
 {
 	int i;
 	i = 42;
-	ft_printf("\nres = %d ",printf("je suis a lecole %d %c", i,'e'));
+	printf("\nres = %d ",ft_printf("je suis a lecole %d %c %s %i %u", i,'e', "lulu"));
 	return (0);
 }
