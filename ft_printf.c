@@ -10,10 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-
-int	ft_printf(int c)
+int ft_conv_arg(const char *format, va_list args, int i)
 {
-    return(c);
+    if (format[i] == 'c')
+        return (val_cara(va_arg(args, int)));
+    if (format[i] == 'd')
+        return (val_int(va_arg(args, int)));
+    return (0);
+}
+
+int ft_printf(const char *format, ...)
+{
+    int i;
+    int ret;
+    va_list args;
+
+    va_start(args, format);
+    i = 0;
+    ret = 0;
+    while (format[i])
+    {
+        if (format[i] == '%')
+        {
+            i++;
+            if (ft_strchr("cspdiuxX", format[i]))
+            {
+                ret += ft_conv_arg(format, args, i);
+                i++;
+            }
+        }
+        else
+        {
+            ft_putchar_fd(format[i], 1);
+            i++;
+            ret++;
+        }
+    }
+    va_end(args);
+    return (ret);
 }

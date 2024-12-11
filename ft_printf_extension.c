@@ -1,27 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_extension.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luda-cun <luda-cun@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-12-02 14:41:54 by luda-cun          #+#    #+#             */
-/*   Updated: 2024-12-02 14:41:54 by luda-cun         ###   ########.fr       */
+/*   Created: 2024-12-11 16:01:09 by luda-cun          #+#    #+#             */
+/*   Updated: 2024-12-11 16:01:09 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include "libft/libft.h" // Inclure votre libft si elle est utilisée
-# include <stdarg.h>      // Pour gérer les arguments variadiques
-# include <stdio.h>
-# include <stdlib.h> // Pour malloc, free
-# include <unistd.h> // Pour write
+int	val_int(int nbr)
+{
+	int	i;
+    int ret;
 
-// Fonction principale
-int	ft_printf(const char *format, ...);
-int	val_int(int nbr);
-int	val_cara(int c);
+    ret = nbr;
+	i = 0;
+	if (nbr < 0)
+	{
+		nbr = nbr * (-1);
+        ft_putchar_fd('-',1);
+		i++;
+	}
+	if (nbr == 0)
+		i = 1;
+	while (nbr > 0)
+	{
+		nbr =nbr / 10;
+		i++;
+	}
+	ft_putnbr_fd(ret, 1);
+	return (i);
+}
 
-#endif
+int	val_cara(int c)
+{
+    ft_putchar_fd((char)c, 1);
+    return(1);
+}

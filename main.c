@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	main(void)
 {
-	ft_putstr_fd("lucien", 1);
+	int i;
+	i = 42;
+	ft_printf("\nres = %d ",printf("je suis a lecole %d %c", i,'e'));
 	return (0);
 }
