@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:01:09 by luda-cun          #+#    #+#             */
-/*   Updated: 2024/12/11 19:57:26 by luda-cun         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:31:23 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ int	val_str(char *s)
 
 int	val_cara(int c)
 {
-	ft_putchar_fd((char)c, 1);
+	ft_putchar_fd((int)c, 1);
 	return (1);
 }
 
 int	val_unsi_int(unsigned int nbr)
 {
-	int res;
-	int i;
+	int	res;
+	int	i;
 
 	i = 0;
 	res = nbr;

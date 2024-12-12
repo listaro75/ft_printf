@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:59:27 by luda-cun          #+#    #+#             */
-/*   Updated: 2024/12/11 19:45:17 by luda-cun         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:45:00 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,8 @@
 
 int	main(void)
 {
-	int	i;
-
-	i = -42;
-	ft_printf("%c \n", 'c');
-	ft_printf("%s \n", "je suis lucien");
-	ft_printf("%d \n", i);
-	ft_printf("%i \n", i);
-	ft_printf("%u \n", i);
-
+	int i;
+	i = 42;
+	printf("\nres = %d ",ft_printf("je suis a lecole %d %c %s %i %u", i,'e', "lulu"));
 	return (0);
 }

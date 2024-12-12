@@ -6,7 +6,7 @@
 /*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:30:14 by luda-cun          #+#    #+#             */
-/*   Updated: 2024/12/12 15:56:28 by luda-cun         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:38:30 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_conv_arg(const char *format, va_list args, int i)
 {
 	if (format[i] == 'c')
-		return (val_cara(va_arg(args, int)));
+        return (val_cara(va_arg(args, int)));
 	if (format[i] == 's')
 		return (val_str(va_arg(args, char *)));
 	if (format[i] == 'd')
