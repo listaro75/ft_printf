@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_extension.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luda-cun <luda-cun@student.42.fr>          #+#  +:+       +#+        */
+/*   By: luda-cun <luda-cun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-12-11 16:01:09 by luda-cun          #+#    #+#             */
-/*   Updated: 2024-12-11 16:01:09 by luda-cun         ###   ########.fr       */
+/*   Created: 2024/12/11 16:01:09 by luda-cun          #+#    #+#             */
+/*   Updated: 2024/12/11 19:57:26 by luda-cun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	val_int(int nbr)
 	if (nbr < 0)
 	{
 		nbr = nbr * (-1);
-		ft_putchar_fd('-', 1);
 		i++;
 	}
 	if (nbr == 0)
@@ -35,6 +34,7 @@ int	val_int(int nbr)
 	ft_putnbr_fd(ret, 1);
 	return (i);
 }
+
 int	val_str(char *s)
 {
 	int	i;
@@ -50,19 +50,18 @@ int	val_cara(int c)
 	return (1);
 }
 
-int val_unsi_int(unsigned int nbr)
+int	val_unsi_int(unsigned int nbr)
 {
-    int res;
-    int i;
+	int res;
+	int i;
 
-    i = 0;
-    res = nbr;
-    while (nbr > 0)
+	i = 0;
+	res = nbr;
+	while (nbr > 0)
 	{
 		nbr = nbr / 10;
 		i++;
 	}
-    ft_putnbr_fd(res, 1);
-    return (i);
-
+	ft_putnbr_fd(res, 1);
+	return (i);
 }
