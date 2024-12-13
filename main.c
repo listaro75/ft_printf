@@ -16,6 +16,15 @@ int	main(void)
 {
 	int i;
 	i = 42;
-	printf("\nres = %d ",ft_printf("je suis a lecole %d %c %s %i %u", i,'e', "lulu"));
+	printf("\nres = %d\n", ft_printf(" %x ", 1));
+	printf("\n");
+	// printf(ft_printf(" %d %d %d %d %d %d %d", INT_MAX, INT_MIN, LONG_MAX,
+			// LONG_MIN, ULONG_MAX, 0, -42));
+	printf("\n");
+	printf("\n res = %d\n", printf(" %%%d ", 1));
+	printf("\n");
+	// ft_printf(" %d %d %d %d %d %d %d", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN,
+		// ULONG_MAX, 0, -42);
+
 	return (0);
 }

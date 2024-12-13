@@ -13,19 +13,20 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft/libft.h" // Inclure votre libft si elle est utilisée
-# include <stdarg.h>      // Pour gérer les arguments variadiques
+# include "libft/libft.h"
+# include <limits.h>
+# include <stdarg.h>
 # include <stdio.h>
-# include <stdlib.h> // Pour malloc, free
-# include <unistd.h> // Pour write
+# include <stdlib.h>
+# include <unistd.h>
 
-// Fonction principale
-int	ft_printf(const char *format, ...);
-int	val_int(int nbr);
-int	val_cara(int c);
-int	val_str(char *s);
-int val_unsi_int(unsigned int nbr);
-int	val_hexa_min(int x);
+int		ft_printf(const char *format, ...);
+int		val_int(int nbr);
+int		val_cara(int c);
+int		val_str(char *s);
+int		val_unsi_int(unsigned int nbr);
+int		val_hexa_min(unsigned int x);
 void	ft_print_revers(char *str, int i);
+int		val_hexa_maj(unsigned int x);
 
 #endif

@@ -12,49 +12,45 @@
 
 #include "ft_printf.h"
 
-int	ft_conv_arg(const char *format, va_list args, int i)
+int	ft_conv_arg(const char format, va_list args)
 {
-	if (format[i] == 'c')
-        return (val_cara(va_arg(args, int)));
-	if (format[i] == 's')
+	if (format == 'c')
+		return (val_cara(va_arg(args, int)));
+	if (format == 's')
 		return (val_str(va_arg(args, char *)));
-	if (format[i] == 'd')
+	if (format == 'd')
 		return (val_int(va_arg(args, int)));
-	if (format[i] == 'i')
+	if (format == 'i')
 		return (val_int(va_arg(args, int)));
-	if (format[i] == 'u')
+	if (format == 'u')
 		return (val_unsi_int(va_arg(args, unsigned int)));
-	if (format[i] == 'x')
-		return (val_hexa_min(va_arg(args, int)));
+	if (format == 'x')
+		return (val_hexa_min(va_arg(args, unsigned int)));
+	if (format == 'X')
+		return (val_hexa_maj(va_arg(args, unsigned int)));
 	return (0);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	int		i;
 	int		ret;
 	va_list	args;
 
 	va_start(args, format);
-	i = 0;
 	ret = 0;
-	while (format[i])
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
-			i++;
-			if (ft_strchr("cspdiuxX", format[i]))
-			{
-				ret += ft_conv_arg(format, args, i);
-				i++;
-			}
+			format++;
+			if (ft_strchr("cspdiuxX", *format))
+				ret += ft_conv_arg(*format, args);
+			else if (*format == '%')
+				ret += val_cara('%');
 		}
 		else
-		{
-			ft_putchar_fd(format[i], 1);
-			i++;
-			ret++;
-		}
+			ret += val_cara(*format);
+		format++;
 	}
 	va_end(args);
 	return (ret);
