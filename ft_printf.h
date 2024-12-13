@@ -28,5 +28,6 @@ int		val_unsi_int(unsigned int nbr);
 int		val_hexa_min(unsigned int x);
 void	ft_print_revers(char *str, int i);
 int		val_hexa_maj(unsigned int x);
+int		val_point(void *p);
 
 #endif

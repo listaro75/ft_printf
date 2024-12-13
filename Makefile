@@ -9,7 +9,7 @@ TITLE = $(shell printf "\33[32;40m")
 
 NAME = libftprintf.a
 FLAGS = -Wall -Wextra -Werror
-SRCS = ft_printf.c ft_printf_extension.c ft_printf_hexa.c
+SRCS = ft_printf.c ft_printf_extension.c ft_printf_hexa.c ft_printf_pointeur.c
 OBJS = $(SRCS:.c=.o)
 LIBFT = ./libft/libft.a
 
@@ -29,12 +29,12 @@ $(LIBFT):
 fclean: clean
 	@rm -f $(NAME)
 	@make --silent -C ./libft fclean
-	@echo "$(RED)Fichiers objets correctement supprimes$(RESET)"
+	@echo "$(PURPLE)Fichiers objets correctement supprimes$(RESET)"
 
 clean:
 	@rm -rf *.o
 	@rm -rf ./srcs/*.o
 	@make --silent -C ./libft clean
-	@echo "$(RED)Bibliotheque correctement supprimes$(RESET)"
+	@echo "$(PURPLE)Bibliotheque correctement supprimes$(RESET)"
 
 re: fclean all

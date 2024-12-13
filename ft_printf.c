@@ -28,6 +28,8 @@ int	ft_conv_arg(const char format, va_list args)
 		return (val_hexa_min(va_arg(args, unsigned int)));
 	if (format == 'X')
 		return (val_hexa_maj(va_arg(args, unsigned int)));
+	if (format == 'p')
+		return (val_point(va_arg(args, void *)));
 	return (0);
 }
 
